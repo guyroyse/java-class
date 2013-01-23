@@ -1,23 +1,18 @@
 package com.guyroyse.vending;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Stack;
 
 public class ProductChute {
-
-	private List<Product> products = new ArrayList<Product>();
+	
+	private Stack<Product> stack = new Stack<Product>();
 	
 	public void add(Product product) {
-		products.add(product);
+		stack.push(product);
 	}
 	
 	public Product nextProduct() {
-		if (products.isEmpty()) return null;
-		return products.remove(lastProduct());
-	}
-
-	private int lastProduct() {
-		return products.size() - 1;
+		if (stack.empty()) return null;
+		return stack.pop();
 	}
 
 }

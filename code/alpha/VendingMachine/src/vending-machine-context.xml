@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="vendingMachine" class="com.guyroyse.vending.VendingMachine">
+		<property name="display" ref="display" />
+		<property name="inventory" ref="inventory" />
+		<property name="coinLookup" ref="coinLookup" />
+		<property name="insertedCoins" ref="insertedCoins" />
+	</bean>
+  
+ 	<bean id="insertedCoins" class="com.guyroyse.vending.InsertedCoins">
+		<property name="coinLookup" ref="coinLookup" />
+		<property name="display" ref="display" />
+ 	</bean>
+ 	
+ 	<bean id="inventory" class="com.guyroyse.vending.Inventory" />
+ 	
+ 	<bean id="display" class="com.guyroyse.vending.Display" />
+ 	
+	<bean id="coinLookup" class="com.guyroyse.vending.CoinLookup">
+		<property name="coinsToValues">
+			<map>
+				<entry key="QUARTER" value="25" />
+				<entry key="DIME" value="10" />
+				<entry key="NICKEL" value="5" />
+			</map>
+		</property>
+	</bean>
+	
+
+</beans>

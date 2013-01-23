@@ -1,23 +1,18 @@
 package com.guyroyse.vending;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Stack;
 
 public class CoinReturn {
 
-	private List<Coin> coins = new ArrayList<Coin>();
+	private Stack<Coin> stack = new Stack<Coin>();
 	
 	public void add(Coin coin) {
-		coins.add(coin);
+		stack.push(coin);
 	}
 	
 	public Coin nextCoin() {
-		if (coins.isEmpty()) return null;
-		return coins.remove(lastCoin());
-	}
-
-	private int lastCoin() {
-		return coins.size() - 1;
+		if (stack.empty()) return null;
+		return stack.pop();
 	}
 
 }

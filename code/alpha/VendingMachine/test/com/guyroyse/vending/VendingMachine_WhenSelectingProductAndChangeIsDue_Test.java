@@ -11,31 +11,32 @@ public class VendingMachine_WhenSelectingProductAndChangeIsDue_Test extends Vend
 	@Before
 	public void setup() {
 		bootMachine();
+		addInventory();
 	}
 
 	@Test
-	public void itReturnsNickels() throws PriceException {
+	public void itReturnsNickels() throws VendingException {
 		insertFiftyFiveCents();		
 		machine().selectChips();
 		assertThat(machine().takeCoinFromReturn(), is(Coin.NICKEL));
 	}
 
 	@Test
-	public void itReturnsDimes() throws PriceException {
+	public void itReturnsDimes() throws VendingException {
 		insertSixtyCents();		
 		machine().selectChips();
 		assertThat(machine().takeCoinFromReturn(), is(Coin.DIME));
 	}
 
 	@Test
-	public void itReturnsQuarters() throws PriceException {
+	public void itReturnsQuarters() throws VendingException {
 		insertSeventyFiveCents();		
 		machine().selectChips();
 		assertThat(machine().takeCoinFromReturn(), is(Coin.QUARTER));
 	}
 
 	@Test
-	public void itReturnsFortyCentsAsQuarterDimeAndNickel() throws PriceException {
+	public void itReturnsFortyCentsAsQuarterDimeAndNickel() throws VendingException {
 		insertNinetyCents();		
 		machine().selectChips();
 		assertThat(machine().takeCoinFromReturn(), is(Coin.NICKEL));
@@ -44,7 +45,7 @@ public class VendingMachine_WhenSelectingProductAndChangeIsDue_Test extends Vend
 	}
 
 	@Test
-	public void itReturnsTwentyCentsAsTwoDimes() throws PriceException {
+	public void itReturnsTwentyCentsAsTwoDimes() throws VendingException {
 		insertNinetyCents();		
 		machine().selectChips();
 		assertThat(machine().takeCoinFromReturn(), is(Coin.NICKEL));

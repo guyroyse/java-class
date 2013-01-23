@@ -16,47 +16,55 @@ Schedule
 
 Introductions
 
-Class: Java & Git Basics I
+Class: Git & GitHub
+
+  - Git & Github
+
+Lab: Setup Git & Eclipse (solo exercise)
+
+  - setup git & GitHub
+  - clone class repository
+
+Class: Basic Java
 
   - Packages, Classes & Methods  
   - Types  
   - Control Structures
-  - JUnit & TDD
-  - Git & Github
-
-Lab: Vending Machine (paired exercise)  
-
-  - setup project
-  - use git to manage code
-  - just code the coins interactions
-
-### Day 2
-
-Class: Java Basics II
-
   - Scoping  
-  - Arrays & Collections  
-  - Exceptions  
-  - Hamcrest
+  - Arrays
+  - Demo: Over-engineered Fizzbuzz
+
+Class: JUnit & TDD
+
+  - Manual Test
+  - Demo: Testing the Hard Way
+  - JUnit
+  - Demo: Testing with JUnit
+  - TDD
+  - Demo: TDD Fizzbuzz
 
 Lab: Vending Machine (paired exercise)
 
-  - use collections to maintain state
-  - exceptions for error messages (SOLD OUT, INSUFFICIENT FUNDS)
+  - pair and setup projects
+  - use git to check in projects manage code
+
+### Day 2
+
+Lab: Vending Machine (paired exercise)
 
 ### Day 3
 
-Class: Interfaces & Inheritance
+Class: Intermediate Java
 
-  - Interfaces
   - Inheritance
+  - Exceptions
+  - Interfaces
+  - Templates
+  - Collections
   - Static & Final
   - Mockito
 
 Lab: Vending Machine (paired exercise)
-
-  - create abstract and specialized vending machines
-  - create an interface for product information
 
 ### Day 4
 

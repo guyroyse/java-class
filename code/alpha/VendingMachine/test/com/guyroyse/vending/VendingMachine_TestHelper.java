@@ -1,11 +1,15 @@
 package com.guyroyse.vending;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 public class VendingMachine_TestHelper {
 
 	private VendingMachine machine;
 	
 	protected void bootMachine() {
-		machine = new VendingMachine();
+		ApplicationContext context = new ClassPathXmlApplicationContext("vending-machine-context.xml");
+		machine = (VendingMachine) context.getBean("vendingMachine");
 	}
 	
 	protected VendingMachine machine() {
@@ -36,7 +40,29 @@ public class VendingMachine_TestHelper {
 	}
 
 	protected String display() {
-		return machine().getDisplay();
+		return machine().readDisplay();
 	}
 
+	protected void addInventory() {
+		addCola();
+		addCandy();
+		addChips();
+	}
+	
+	protected void addCola() {
+		addProduct(Product.COLA);
+	}
+
+	protected void addCandy() {
+		addProduct(Product.CANDY);
+	}
+
+	protected void addChips() {
+		addProduct(Product.CHIPS);
+	}
+
+	private void addProduct(Product product) {
+		machine().stockProduct(product);
+	}
 }
+

@@ -15,12 +15,12 @@ public class VendingMachine_WhenSelectingProductWithoutEnoughMoney_Test extends 
 	}
 
 	@Test(expected = PriceException.class)
-	public void itRejectsProductSelection() throws PriceException {
+	public void itRejectsProductSelection() throws VendingException {
 		machine().selectCola();
 	}
 	
 	@Test
-	public void itExpectsOneDollarForCola() {
+	public void itExpectsOneDollarForCola() throws VendingException {
 		try {
 			machine().selectCola();
 			fail("PriceException expected");
@@ -30,7 +30,7 @@ public class VendingMachine_WhenSelectingProductWithoutEnoughMoney_Test extends 
 	}
 	
 	@Test
-	public void itExpectsFiftyCentsForChips() {
+	public void itExpectsFiftyCentsForChips() throws VendingException {
 		try {
 			machine().selectChips();
 			fail("PriceException expected");
@@ -40,7 +40,7 @@ public class VendingMachine_WhenSelectingProductWithoutEnoughMoney_Test extends 
 	}
 
 	@Test
-	public void itExpectsSixtyFiveCentsForCandy() {
+	public void itExpectsSixtyFiveCentsForCandy() throws VendingException {
 		try {
 			machine().selectCandy();
 			fail("PriceException expected");
@@ -50,7 +50,7 @@ public class VendingMachine_WhenSelectingProductWithoutEnoughMoney_Test extends 
 	}
 
 	@Test
-	public void itDisplaysCurrentAmountAfterRejection() {
+	public void itDisplaysCurrentAmountAfterRejection() throws VendingException {
 		try {
 			machine().selectCola();
 		} catch (PriceException ex) {

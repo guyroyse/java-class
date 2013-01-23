@@ -1,7 +1,7 @@
 package com.guyroyse.vending;
 
 @SuppressWarnings("serial")
-public class PriceException extends Exception {
+public class PriceException extends VendingException {
 	
 	private long price = 0;
 	

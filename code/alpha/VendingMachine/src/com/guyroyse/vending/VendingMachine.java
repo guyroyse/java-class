@@ -2,41 +2,59 @@ package com.guyroyse.vending;
 
 public class VendingMachine {
 	
-	private Display display = new Display();
-	private CoinLookup coinLookup = new CoinLookup();
 	private CoinReturn coinReturn = new CoinReturn();
 	private ProductChute productChute = new ProductChute();
 	
-	private long currentAmount = 0;
-	private boolean productJustPurchased = false;
+	private InsertedCoins insertedCoins;
+	public void setInsertedCoins(InsertedCoins insertedCoins) {
+		this.insertedCoins = insertedCoins;
+	}
+
+	private Display display;
+	public void setDisplay(Display display) {
+		this.display = display;
+	}
+
+	private CoinLookup coinLookup;
+	public void setCoinLookup(CoinLookup coinLookup) {
+		this.coinLookup = coinLookup;
+	}
 	
-	public String getDisplay() {
-		
-		if (productJustPurchased) {
-			reset();
-			display.thankYou();
-		} else {
-			display.amount(currentAmount);
-		}
-		
-		return display.getValue();
+	private Inventory inventory;
+	public void setInventory(Inventory inventory) {
+		this.inventory = inventory;
+	}
+	
+	public String readDisplay() {
+		return display.value();
 	}
 
 	public void insertCoin(Coin coin) {
-		if (coinLookup.invalid(coin)) coinReturn.add(coin);
-		currentAmount += coinLookup.value(coin);
+		if (coinLookup.invalid(coin))
+			coinReturn.add(coin);
+		else
+			insertedCoins.addCoin(coin);
 	}
 
-	public void selectCola() throws PriceException {
+	public void selectCola() throws VendingException {
 		selectProduct(Product.COLA);
 	}
 	
-	public void selectChips() throws PriceException {
+	public void selectChips() throws VendingException {
 		selectProduct(Product.CHIPS);
 	}
 	
-	public void selectCandy() throws PriceException {
+	public void selectCandy() throws VendingException {
 		selectProduct(Product.CANDY);
+	}
+
+	private void selectProduct(Product product) throws VendingException {
+		verifyAmount(product);		
+		inventory.take(product);
+		productChute.add(product);
+		returnChange(product);
+		display.thankYou();
+		insertedCoins.reset();
 	}
 
 	public Coin takeCoinFromReturn() {
@@ -47,35 +65,24 @@ public class VendingMachine {
 		return productChute.nextProduct();
 	}
 
-	private void reset() {
-		currentAmount = 0;
-		productJustPurchased = false;
+	public void stockProduct(Product product) {
+		inventory.stock(product);
 	}
 	
-	private void selectProduct(Product product) throws PriceException {
-		verifyAmount(product);		
-		dispenseProduct(product);
-		returnChange(product);
-	}
-
 	private void verifyAmount(Product product) throws PriceException {
-		if (currentAmount < product.getPrice()) throw new PriceException(product.getPrice());
-	}
-
-	private void dispenseProduct(Product product) {
-		productJustPurchased = true;
-		productChute.add(product);
-	}
-
-	private void returnChange(Product product) {
-		long changeDue = currentAmount - product.getPrice();
-		
-		while (changeDue > 0) {
-			Coin largestCoin = coinLookup.largestCoin(changeDue);
-			changeDue -= coinLookup.value(largestCoin);
-			coinReturn.add(largestCoin);
-		}
-		
+		if (insertedCoins.total() < product.getPrice())
+			throw new PriceException(product.getPrice());
 	}
 	
+	private void returnChange(Product product) {
+		long changeDue = insertedCoins.total() - product.getPrice();
+		while (changeDue > 0) changeDue = processChange(changeDue);
+	}
+
+	private long processChange(long changeDue) {
+		Coin largestCoin = coinLookup.largestCoin(changeDue);
+		coinReturn.add(largestCoin);
+		return changeDue - coinLookup.value(largestCoin);
+	}
+
 }

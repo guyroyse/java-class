@@ -1,6 +1,6 @@
 package com.guyroyse.vending;
 
 public enum Coin {
-	NICKEL, DIME, QUARTER, PENNY
+	QUARTER, DIME, NICKEL, PENNY
 
 }
