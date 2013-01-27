@@ -57,26 +57,20 @@ Lab: Vending Machine (paired exercise)
 Class: Intermediate Java
 
   - Inheritance
-  - Exceptions
   - Interfaces
-  - Templates
+  - Exceptions
   - Collections
   - Static & Final
-  - Mockito
 
 Lab: Vending Machine (paired exercise)
 
 ### Day 4
 
-Class: Spring & Thread Safety
+Class: Spring DI
 
-  - Thread Safety  
   - Spring DI  
 
 Lab: Vending Machine (paired exercise)
-
-  - make vending machine thread safe
-  - springify vending machine
 
 ### Day 5
 
