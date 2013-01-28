@@ -58,6 +58,7 @@ Class: Intermediate Java
 
   - Inheritance
   - Interfaces
+  - Polymorphism
   - Exceptions
   - Collections
   - Static & Final
