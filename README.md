@@ -58,22 +58,29 @@ Class: Intermediate Java
 
   - Inheritance
   - Interfaces
-  - Polymorphism
   - Exceptions
   - Collections
   - Static & Final
 
-Lab: Vending Machine (paired exercise)
+Demo: Vending Machine (paired exercise)
 
 ### Day 4
 
-Class: Spring DI
-
-  - Spring DI  
-
-Lab: Vending Machine (paired exercise)
+Lab: Vending Machine (group exercise)
 
 ### Day 5
+
+Class: Spring DI & Testing Pyramid
+
+  - Spring DI
+
+Demo: Vending Machine (paired exercise)
+
+### Day 6
+
+Lab: Vending Machine Spring (group exercise)
+
+### Day 7 
 
 Class: UI Basics
 
@@ -81,52 +88,34 @@ Class: UI Basics
   - JSPs  
   - Tomcat  
 
-Lab: Vending Machine (paired exercise)
+Demo: Vending Machine (paired exercise)
 
-  - put a simple UI on the vending machine
+### Day 8
 
-### Day 6
+Lab: Vending Machine UI (group exercise)
 
-Class: UI Frameworks
-
-  - Spring MVC  
-
-Lab: Vending Machine (paired exercise)
-
-  - convert UI to SpringMVC
-
-### Day 7 
+### Day 9
 
 Class: Data Persistence
 
   - JDBC  
-  - MyBatis  
+  - MyBatis
 
-Lab: Vending Machine (paired exercise)
-
-  - use databases to store vending machine state
-
-### Day 8
-
-Class: Understanding Agile (guest instructor)
-
-Lab: Define Cardwall Requirements
-
-### Day 9
-
-Lab: Cardwall Kata (group exercise)
+Demo: Vending Machine (paired exercise)
 
 ### Day 10
 
-Lab: Cardwall Kata (group exercise)
+Lab: Vending Machine DB (group exercise)
 
 ### Day 11
 
-Lab: Cardwall Kata (group exercise)
+No Class
 
 ### Day 12
 
-Lab: Cardwall Kata (group exercise)
+Class: The Big Agile Talk
+
+Lab: Cardwall Kata Backlog (group exercise)
 
 Retrospective
 
