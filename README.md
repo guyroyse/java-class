@@ -20,7 +20,7 @@ Class: Git & GitHub
 
   - Git & Github
 
-Lab: Setup Git & Eclipse (solo exercise)
+Lab: Setup Git & Eclipse
 
   - setup git & GitHub
   - clone class repository
@@ -43,14 +43,14 @@ Class: JUnit & TDD
   - TDD
   - Demo: TDD Fizzbuzz
 
-Lab: Vending Machine (paired exercise)
+Lab: Vending Machine
 
   - pair and setup projects
   - use git to check in projects manage code
 
 ### Day 2
 
-Lab: Vending Machine (paired exercise)
+Lab: Vending Machine
 
 ### Day 3
 
@@ -62,11 +62,11 @@ Class: Intermediate Java
   - Collections
   - Static & Final
 
-Demo: Vending Machine (paired exercise)
+Demo: Vending Machine
 
 ### Day 4
 
-Lab: Vending Machine (group exercise)
+Lab: Vending Machine
 
 ### Day 5
 
@@ -74,11 +74,11 @@ Class: Spring DI & Testing Pyramid
 
   - Spring DI
 
-Demo: Vending Machine (paired exercise)
+Demo: Vending Machine
 
 ### Day 6
 
-Lab: Vending Machine Spring (group exercise)
+Lab: Vending Machine Spring
 
 ### Day 7 
 
@@ -86,13 +86,14 @@ Class: UI Basics
 
   - Servlets  
   - JSPs  
-  - Tomcat  
+  - Tomcat
+  - MVC  
 
-Demo: Vending Machine (paired exercise)
+Demo: Vending Machine
 
 ### Day 8
 
-Lab: Vending Machine UI (group exercise)
+Lab: Vending Machine UI
 
 ### Day 9
 
@@ -101,21 +102,23 @@ Class: Data Persistence
   - JDBC  
   - MyBatis
 
-Demo: Vending Machine (paired exercise)
+Demo: Twitcher Data Access
+
+Class: Agile
+
+Exercise: Spike Backlog for Twitcher (a Twitter clone)
 
 ### Day 10
 
-Lab: Vending Machine DB (group exercise)
+Lab: Twitcher
 
 ### Day 11
 
-No Class
+Lab: Twitcher
 
 ### Day 12
 
-Class: The Big Agile Talk
-
-Lab: Cardwall Kata Backlog (group exercise)
+Lab: Twitcher
 
 Retrospective
 
